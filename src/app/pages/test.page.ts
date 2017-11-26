@@ -1,4 +1,4 @@
-import { Page, Segment, SegmentType } from '../page';
+import { Page, Segment } from '../page';
 
 const lorem = `
 Qu'est-ce que le Lorem Ipsum?
@@ -33,6 +33,9 @@ export const TESTPAGE: Page = {
       imageRight: true,
       image: "/assets/test.jpg",
       height: "100px"
+    },
+    {
+      text: "<b>Gras</b><i>Italic</i><a href='https://www.google.ch'>Google</a>"
     }
   ]
 }

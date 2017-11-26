@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Page, Segment, SegmentType } from '../page';
+import { Page, Segment } from '../page';
 
 @Component({
   selector: 'app-page',

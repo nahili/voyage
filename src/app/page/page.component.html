@@ -10,8 +10,7 @@
          [style.width]="segment.imageWidth ? segment.imageWidth:'auto'"
          class="image"
     />
-    <p *ngIf="segment.text" class="text">
-      {{segment.text}}
-    </p>
+    <p *ngIf="segment.text" [innerHTML]="segment.text" class="text"></p>
+
   </div>
 </div>
