@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap }  from '@angular/router';
 import { Location } from '@angular/common';
 
-import { Page } from '../page';
+import { config } from '../../config';
+import { PageLink, Page } from '../page';
 import { PagesService } from '../pages.service';
 
 @Component({
@@ -13,18 +14,26 @@ import { PagesService } from '../pages.service';
 export class StoryComponent implements OnInit {
 
   // Current page
-  current: Page;
+  current: PageLink;
+  config: any;
 
   constructor(
     private pagesService: PagesService,
     private location: Location,
     private route: ActivatedRoute
-  ) { }
+  ) {
+    this.config = config;
+  }
 
   ngOnInit() {
     // Load the current page to show
-    const id = this.route.snapshot.paramMap.get('id');
-    this.pagesService.page(id).subscribe(page => this.current = page);
+    this.route.paramMap.subscribe(
+      params => this.pagesService.page(params.get(config.routes.storyId)).subscribe(page => this.changePage(page))
+    );
+  }
+
+  changePage(page:PageLink):void {
+    this.current = page;
   }
 
 }

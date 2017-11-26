@@ -21,3 +21,9 @@ export class Segment {
   // Text
   text?: string;
 }
+
+// A PageLink has a page and the link to the previous and next ones
+export class PageLink extends Page {
+  next: string;
+  previous: string;
+}

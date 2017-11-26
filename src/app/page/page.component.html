@@ -1,13 +1,13 @@
 <div *ngIf="page">
   <div *ngFor="let segment of page.segments" class="segment"
-    [style.height]="segment.height ? segment.height:'auto'"
+    [style.height]="segment.height ? segment.height:config.page.defaultSegmentHeight"
   >
 
     <!-- text and/or image -->
     <img *ngIf="segment.image"
          src="{{segment.image}}"
          [style.order]="segment.imageRight ? 3:1"
-         [style.width]="segment.imageWidth ? segment.imageWidth:'auto'"
+         [style.width]="segment.imageWidth ? segment.imageWidth:config.page.defaultImageWidth"
          class="image"
     />
     <p *ngIf="segment.text" [innerHTML]="segment.text" class="text"></p>

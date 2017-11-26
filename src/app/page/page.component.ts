@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { Page, Segment } from '../page';
+import { config } from '../../config';
 
 @Component({
   selector: 'app-page',
@@ -9,9 +10,13 @@ import { Page, Segment } from '../page';
 })
 export class PageComponent implements OnInit {
 
+  config:any;
+
   @Input() page:Page;
 
-  constructor() { }
+  constructor() {
+    this.config = config;
+  }
 
   ngOnInit() {
 

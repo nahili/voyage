@@ -1,4 +1,7 @@
-<button>Previous</button>
-<app-page *ngIf="current" [page]="current"></app-page>
+<div *ngIf="current">
+  <a *ngIf="current.previous" routerLink="/{{config.routes.story}}/{{current.previous}}">Previous</a>
+  <app-page [page]="current"></app-page>
+  <a *ngIf="current.next" routerLink="/{{config.routes.story}}/{{current.next}}">Next</a>
+</div>
+
 <span *ngIf="!current">404</span>
-<button>Next</button>
