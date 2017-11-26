@@ -1,6 +1,17 @@
-yo
 <div *ngIf="page">
-  <p>
-    URL:{{page.id}}
-  </p>
+  <div *ngFor="let segment of page.segments" class="segment"
+    [style.height]="segment.height ? segment.height:'auto'"
+  >
+
+    <!-- text and/or image -->
+    <img *ngIf="segment.image"
+         src="{{segment.image}}"
+         [style.order]="segment.imageRight ? 3:1"
+         [style.width]="segment.imageWidth ? segment.imageWidth:'auto'"
+         class="image"
+    />
+    <p *ngIf="segment.text" class="text">
+      {{segment.text}}
+    </p>
+  </div>
 </div>

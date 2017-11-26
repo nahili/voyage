@@ -3,7 +3,7 @@ export class Page {
   // ID used for routing
   id: string;
   // List of segments
-  segments: Array<Segment>;
+  segments?: Array<Segment>;
 }
 
 // Type of a segment
@@ -22,21 +22,17 @@ export enum SegmentType {
 
 // A segment is part of a page, that contains a layout with text, images, etc
 export class Segment {
-  // Type of the segment
-  type: SegmentType;
   // Height of the element
-  height: string;
+  height?: string;
   // Width of the element
-  width: string;
+  width?: string;
   // URL or ID of the image to show
-  image: string;
+  image?: string;
   // Width (CSS) of the image
-  imageWidth: string;
+  imageWidth?: string;
+  // True if the picture is on the right
+  imageRight?: boolean;
   // Text
-  text: string;
+  text?: string;
 
-  // Create a segment of this type, of a text type by default
-  constructor ( type: SegmentType = SegmentType.Text) {
-    this.type = type;
-  }
 }

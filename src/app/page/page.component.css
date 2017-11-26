@@ -1,0 +1,9 @@
+/* The text is always in order 2, so that the image can move around it */
+.text {
+  order: 2;
+}
+
+.segment {
+  display:flex;
+  overflow: hidden;
+}
