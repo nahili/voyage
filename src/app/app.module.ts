@@ -8,13 +8,15 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { PageComponent } from './page/page.component';
 import { StoryComponent } from './story/story.component';
 import { PagesService } from './pages.service';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PageComponent,
-    StoryComponent
+    StoryComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,

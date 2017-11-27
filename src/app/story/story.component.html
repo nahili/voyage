@@ -4,4 +4,4 @@
   <a *ngIf="current.next" routerLink="/{{config.routes.story}}/{{current.next}}">Next</a>
 </div>
 
-<span *ngIf="!current">404</span>
+<app-pagenotfound *ngIf="!current">404</app-pagenotfound>
