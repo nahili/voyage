@@ -42,25 +42,32 @@ export class PagesService {
         name:p.name,
         parent:p.parent,
         url:config.routes.story + '/' + p.id,
-        level:(p.parent ? null:0) // If the page has no parent, make it level 0
+        level:(p.parent ? -1:0) // If the page has no parent, make it level 0
       })
     // Go through all the pages, if one misses a level, find it's parent
     // and use the parent's level + 1. If the parent is nowhere to be found,
     // show an error in the console, set its level to 0 and hope an orphanage will accept it
-    for (let m of menus)
-      if (!m.level) {
-        let p = menus.find(t => t.id == m.parent);
-        if (p)
-          m.level = p.level + 1;
-        else {
-          m.level = 0;
-          console.warn(
-            "Page " + m.id +
-            " has an invalid parent : " + m.parent +
-            ", setting its level to 0"
-          );
+    let missing;
+    do {
+      missing=false; // Hey, we start hopefull!
+      for (let m of menus)
+        if (!m.level) {
+          let p = menus.find(t => t.id == m.parent);
+          if (p)
+            if (p.level != -1)
+              m.level = p.level + 1;
+            else // Level is missing, we will have to try again later
+              missing=true;
+          else {
+            m.level = 0;
+            console.warn(
+              "Page " + m.id +
+              " has an invalid parent : " + m.parent +
+              ", setting its level to 0"
+            );
+          }
         }
-      }
+    } while (missing); // We continue until all levels are figured out
 
     return of(menus);
   }
