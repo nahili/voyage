@@ -7,7 +7,9 @@ export const config = {
 
   routes: {
     story: "story",
-    storyId: "id"
+    storyId: "id",
+    gallery: "gallery",
+    tales: "tale"
   },
 
   story: {

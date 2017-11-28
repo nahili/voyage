@@ -9,6 +9,8 @@ import { PageComponent } from './page/page.component';
 import { StoryComponent } from './story/story.component';
 import { PagesService } from './pages.service';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { MenuComponent } from './menu/menu.component';
+import { ContextService } from './context.service';
 
 
 @NgModule({
@@ -16,7 +18,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     AppComponent,
     PageComponent,
     StoryComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     BrowserAnimationsModule
   ],
   providers: [
-    PagesService
+    PagesService,
+    ContextService
   ],
   bootstrap: [AppComponent]
 })

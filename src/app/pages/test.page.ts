@@ -13,6 +13,8 @@ On sait depuis longtemps que travailler avec du texte lisible et contenant du se
 // Test page, to show something
 export const TESTPAGE: Page = {
   id:"test",
+  name:"Test",
+  parent:"home",
   segments: [
     {
       text: lorem

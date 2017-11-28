@@ -2,6 +2,10 @@
 export class Page {
   // ID used for routing
   id: string;
+  // Name of the page (for the menu)
+  name: string;
+  // Parent page (if any, for the menu)
+  parent?: string;
   // List of segments
   segments?: Array<Segment>;
 }
