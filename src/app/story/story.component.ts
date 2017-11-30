@@ -42,6 +42,8 @@ export class StoryComponent implements OnInit {
     this.current = page;
     // Set the currently active menu item
     this.context.currentMenuItem = page.id;
+    // Set the current place too
+    this.context.currentPlace.next(page.place);
   }
 
 }

@@ -15,6 +15,7 @@ export const TESTPAGE: Page = {
   id:"test",
   name:"Test",
   parent:"home",
+  place:"test",
   segments: [
     {
       text: lorem

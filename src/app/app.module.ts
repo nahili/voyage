@@ -11,6 +11,8 @@ import { PagesService } from './pages.service';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { MenuComponent } from './menu/menu.component';
 import { ContextService } from './context.service';
+import { MapsService } from './maps.service';
+import { MapComponent } from './map/map.component';
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import { ContextService } from './context.service';
     PageComponent,
     StoryComponent,
     PagenotfoundComponent,
-    MenuComponent
+    MenuComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,8 @@ import { ContextService } from './context.service';
   ],
   providers: [
     PagesService,
-    ContextService
+    ContextService,
+    MapsService
   ],
   bootstrap: [AppComponent]
 })

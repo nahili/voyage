@@ -4,6 +4,9 @@ export class Page {
   id: string;
   // Name of the page (for the menu)
   name: string;
+  // Corresponding place to show on the map (if any)
+  // If not given, the default map one will be used
+  place?: string;
   // Parent page (if any, for the menu)
   parent?: string;
   // List of segments
