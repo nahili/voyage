@@ -1,4 +1,4 @@
-<div *ngIf="current">
+<div *ngIf="current" class="story">
   <a *ngIf="current.previous" routerLink="/{{config.routes.story}}/{{current.previous}}">Previous</a>
   <app-page [page]="current"></app-page>
   <a *ngIf="current.next" routerLink="/{{config.routes.story}}/{{current.next}}">Next</a>

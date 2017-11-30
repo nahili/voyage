@@ -1,14 +1,21 @@
-<nav>
+ <nav>
 
   <!-- Global static menu -->
-  <a routerLink="/{{config.routes.story}}/{{config.story.default}}" routerLinkActive="active">Histoire</a>
-  <a routerLink="/{{config.routes.tales}}" routerLinkActive="active">Anecdotes</a>
-  <a routerLink="/{{config.routes.gallery}}" routerLinkActive="active">Gallerie</a>
+  <div class="static">
+    <a routerLink="/{{config.routes.story}}/{{config.story.default}}"  class="story">Histoire</a>
+  </div>
+  <div class="static">
+    <a routerLink="/{{config.routes.tales}}" class="tales">Anecdotes</a>
+  </div>
+  <div class="static">
+    <a routerLink="/{{config.routes.gallery}}" class="gallery">Gallerie</a>
+  </div>
 
   <div class="separator"></div>
 
   <!-- Page specific menu -->
-  <div *ngFor="let m of context.contextualMenu">
-    <a routerLink="{{m.url}}">{{m.name}}</a> / {{m.id}} / {{m.level}} <span *ngIf="context.currentMenuItem == m.id">Selected</span>
+  <div *ngFor="let m of context.contextualMenu" class="contextual">
+    <a routerLink="{{m.url}}" routerLinkActive="context-active">{{m.name}}</a>
+    <!--<span *ngIf="context.currentMenuItem == m.id">Selected</span>-->
   </div>
 </nav>

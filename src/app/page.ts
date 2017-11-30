@@ -27,6 +27,8 @@ export class Segment {
   imageRight?: boolean;
   // Text
   text?: string;
+  // Is a tale
+  tale?: boolean = false; 
 }
 
 // A PageLink has a page and the link to the previous and next ones

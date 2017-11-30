@@ -29,6 +29,7 @@ export const TESTPAGE: Page = {
     },
     {
       text: lorem,
+      tale: true,
       image: "/assets/test.jpg"
     },
     {

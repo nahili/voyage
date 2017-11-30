@@ -1,4 +1,4 @@
-<div *ngIf="page">
+<div *ngIf="page" class="page">
   <div *ngFor="let segment of page.segments" class="segment"
     [style.height]="segment.height ? segment.height:config.page.defaultSegmentHeight"
   >
@@ -10,7 +10,7 @@
          [style.width]="segment.imageWidth ? segment.imageWidth:config.page.defaultImageWidth"
          class="image"
     />
-    <p *ngIf="segment.text" [innerHTML]="segment.text" class="text"></p>
+    <p *ngIf="segment.text" [innerHTML]="segment.text" [class.tale]="segment.tale" class="text"></p>
 
   </div>
 </div>

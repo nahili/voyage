@@ -27,7 +27,7 @@ export class MapComponent implements OnInit {
     // Create the map
     this.map = L.map('map');
     // Setup the tilelayer from the config
-    L.tileLayer(config.map.service, config.map.options).addTo(this.map);
+    //L.tileLayer(config.map.service, config.map.options).addTo(this.map); // TODO
     // Set the default view
     this.mapService.placeToMapPlace(config.map.defaultPlace).subscribe(
       place => place ? this.map.setView(place.latlng,place.zoom):null
